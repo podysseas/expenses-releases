@@ -1,0 +1,23 @@
+<!doctype html>
+<!-- Allowed redirect URL of the Enable Banking application for the phone app,
+     published at https://podysseas.github.io/expenses-releases/auth.html. It hands
+     the bank's one-time code to the app and keeps nothing. -->
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Back to Expenses</title>
+<style>
+  body { font: 18px/1.5 system-ui, sans-serif; margin: 2rem 1rem; text-align: center; }
+  a { display: inline-block; margin-top: 1rem; padding: .8rem 1.4rem; border-radius: .5rem;
+      background: #509ee3; color: #fff; text-decoration: none; font-weight: 600; }
+</style>
+<p>Your bank login is done.</p>
+<a id="open" href="expenses://auth">Open Expenses</a>
+<script>
+  // The code and state the bank added go to the app as they are.
+  var target = "expenses://auth" + location.search;
+  document.getElementById("open").href = target;
+  location.replace(target);
+</script>
+</html>
